@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thành Đạt | Marketing nón bảo hiểm</title>
+<meta name="description" content="Thành Đạt - bán hàng kiêm marketing tại một shop nón bảo hiểm biker, nón bảo hiểm nhập từ Đài Loan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800;900&display=swap&subset=vietnamese" rel="stylesheet">
+<style>
+  :root {
+    --navy: #07122b;
+    --navy-2: #0d1d45;
+    --navy-3: #13285c;
+    --blue: #1f6bff;
+    --electric: #3fa9ff;
+    --ice: #d9ecff;
+    --white: #ffffff;
+    --muted: #b8c8e6;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    background: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+
+  section {
+    position: relative;
+    overflow: hidden;
+    overflow: clip;
+    padding: 72px 20px;
+  }
+  .wrap {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* Tiêu đề lớn */
+  .kicker {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--electric);
+    padding: 6px 14px;
+    transform: skewX(-12deg);
+  }
+  .kicker span { display: inline-block; transform: skewX(12deg); }
+  .big {
+    font-size: clamp(2.4rem, 11vw, 6.5rem);
+    font-weight: 900;
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+    margin: 18px 0 28px;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+  .big .outline {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--electric);
+  }
+  .big .blue { color: var(--electric); }
+
+  /* ===== HERO ===== */
+  .hero {
+    padding-top: 40px;
+    padding-bottom: 90px;
+    background:
+      linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 60%, var(--navy-3) 100%);
+  }
+  .hero::before {
+    /* vệt chéo lớn */
+    content: "";
+    position: absolute;
+    top: 52%;
+    right: -30%;
+    width: 80%;
+    height: 70%;
+    background: linear-gradient(180deg, var(--blue), var(--electric));
+    transform: skewX(-18deg);
+    opacity: 0.9;
+    z-index: 0;
+  }
+  .hero::after {
+    /* sọc chéo mảnh */
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 46px;
+    background: repeating-linear-gradient(-45deg, var(--electric) 0 14px, transparent 14px 32px);
+    opacity: 0.35;
+    z-index: 0;
+  }
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+    margin-bottom: 36px;
+  }
+  .topbar a {
+    text-decoration: none;
+    border: 2px solid var(--white);
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    background: var(--navy);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+  .hero-grid > *, .stats > *, .steps > *, .skill-groups > *, .buttons > * { min-width: 0; }
+  .photo-box {
+    position: relative;
+    width: min(78%, 360px);
+    margin-left: auto;
+    margin-right: 8%;
+  }
+  .photo-box::before {
+    content: "";
+    position: absolute;
+    inset: 18px -14px -18px 14px;
+    border: 4px solid var(--white);
+    z-index: 0;
+  }
+  .photo-box img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center 55%;
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 82% 100%, 0 100%);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  }
+  .photo-tag {
+    position: absolute;
+    z-index: 2;
+    left: -12px;
+    bottom: 26px;
+    background: var(--navy);
+    color: var(--white);
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 8px 14px;
+    border-left: 6px solid var(--electric);
+  }
+  .hero h1 {
+    font-size: clamp(3.2rem, 17vw, 8.5rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    margin: 18px 0 22px;
+    overflow-wrap: anywhere;
+  }
+  .hero h1 .l2 {
+    display: block;
+    padding-left: 0.45em;
+    color: var(--electric);
+  }
+  .tagline {
+    font-size: clamp(1.25rem, 4.6vw, 1.7rem);
+    font-weight: 700;
+    line-height: 1.35;
+    max-width: 22ch;
+    margin: 0 0 16px;
+  }
+  .subline {
+    color: var(--muted);
+    margin: 0;
+    max-width: 40ch;
+  }
+  .subline strong { color: var(--white); }
+
+  /* ===== CON SỐ ===== */
+  .numbers { background: var(--white); color: var(--navy); }
+  .numbers::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -20%;
+    width: 60%;
+    height: 22px;
+    background: var(--blue);
+    transform: skewX(-30deg);
+  }
+  .numbers::after {
+    content: "";
+    position: absolute;
+    right: -60px;
+    bottom: -60px;
+    width: 220px;
+    height: 220px;
+    border: 26px solid var(--ice);
+    border-radius: 50%;
+    z-index: 0;
+  }
+  .numbers .big { color: var(--navy); }
+  .numbers .big .blue { color: var(--blue); }
+  .stats {
+    display: grid;
+    gap: 22px;
+  }
+  .stat {
+    position: relative;
+    background: var(--navy);
+    color: var(--white);
+    padding: 28px 24px 26px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 26px), calc(100% - 26px) 100%, 0 100%);
+  }
+  .stat:nth-child(2) { background: var(--blue); }
+  .stat:nth-child(3) { background: var(--navy-3); }
+  .stat .num {
+    display: block;
+    font-size: clamp(2.6rem, 13vw, 4.4rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    overflow-wrap: anywhere;
+  }
+  .stat .unit {
+    display: block;
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 6px 0 14px;
+    color: var(--ice);
+  }
+  .stat p { margin: 0; font-size: 1rem; }
+  .stat .where {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--white);
+    color: var(--navy);
+    padding: 4px 10px;
+  }
+
+  /* ===== DỰ ÁN ===== */
+  .project { background: var(--navy); }
+  .project::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    right: -120px;
+    width: 340px;
+    height: 340px;
+    background: var(--blue);
+    transform: rotate(45deg);
+    opacity: 0.25;
+  }
+  .project::after {
+    content: "";
+    position: absolute;
+    left: -40px;
+    bottom: 80px;
+    width: 0;
+    height: 0;
+    border-left: 120px solid transparent;
+    border-right: 120px solid transparent;
+    border-bottom: 200px solid var(--electric);
+    opacity: 0.12;
+  }
+  .project .lead { color: var(--muted); max-width: 46ch; margin: -8px 0 40px; }
+  .steps {
+    display: grid;
+    gap: 28px;
+    counter-reset: step;
+  }
+  .step {
+    position: relative;
+    background: var(--navy-2);
+    border-left: 6px solid var(--electric);
+    padding: 26px 22px 24px;
+  }
+  .step .label {
+    font-size: clamp(1.6rem, 7vw, 2.4rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0 0 14px;
+    color: var(--electric);
+  }
+  .step .idx {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(63, 169, 255, 0.55);
+  }
+  .step p { margin: 0 0 10px; }
+  .step ul { margin: 0; padding-left: 1.2em; }
+  .step li { margin-bottom: 8px; }
+  .step li::marker { color: var(--electric); }
+  .note {
+    display: block;
+    color: var(--muted);
+    font-size: 1rem;
+    margin-top: 6px;
+  }
+  .result-nums {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 12px 0 6px;
+  }
+  .result-nums span {
+    background: var(--blue);
+    font-weight: 800;
+    padding: 6px 12px;
+    font-size: 1rem;
+  }
+
+  /* ===== KỸ NĂNG ===== */
+  .skills {
+    background: linear-gradient(135deg, var(--blue) 0%, #1452c9 100%);
+  }
+  .skills::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(-60deg, rgba(255,255,255,0.07) 0 2px, transparent 2px 28px);
+    z-index: 0;
+  }
+  .skills::after {
+    content: "";
+    position: absolute;
+    right: -80px;
+    top: -80px;
+    width: 260px;
+    height: 260px;
+    background: var(--navy);
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    opacity: 0.35;
+  }
+  .skills .big .outline { -webkit-text-stroke-color: var(--white); }
+  .skill-groups { display: grid; gap: 34px; }
+  .skill-groups h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0 0 14px;
+    color: var(--ice);
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .chips li {
+    background: var(--navy);
+    color: var(--white);
+    font-weight: 700;
+    padding: 12px 18px;
+    transform: skewX(-10deg);
+  }
+  .chips li > span { display: inline-block; transform: skewX(10deg); }
+  .chips small {
+    display: block;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  .chips.light li { background: var(--white); color: var(--navy); }
+  .chips.light small { color: #3b4d72; }
+
+  /* ===== LIÊN HỆ ===== */
+  .contact {
+    background: var(--navy);
+    padding-bottom: 56px;
+  }
+  .contact::before {
+    content: "";
+    position: absolute;
+    left: -10%;
+    top: 0;
+    width: 120%;
+    height: 100%;
+    background: linear-gradient(100deg, transparent 55%, var(--navy-3) 55%, var(--navy-3) 72%, transparent 72%);
+    z-index: 0;
+  }
+  .contact .lead { color: var(--muted); margin: -8px 0 32px; max-width: 40ch; }
+  .buttons {
+    display: grid;
+    gap: 16px;
+    max-width: 560px;
+  }
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 64px;
+    padding: 16px 24px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    text-decoration: none;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 18px) 100%, 0 100%);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .btn .arrow { font-size: 1.4rem; margin-right: 14px; }
+  .btn-fb { background: var(--electric); color: var(--navy); }
+  .btn-zalo { background: var(--white); color: var(--navy); }
+  .btn:hover, .btn:focus-visible { transform: translateX(6px); }
+  .btn:focus-visible { outline: 3px solid var(--white); outline-offset: 4px; }
+  footer {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 56px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--navy-3);
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  /* ===== MÀN HÌNH LỚN ===== */
+  @media (min-width: 760px) {
+    section { padding: 110px 40px; }
+    .hero { padding-top: 48px; padding-bottom: 130px; }
+    .hero::before { top: -10%; height: 140%; right: -12%; width: 48%; }
+    .hero-grid {
+      grid-template-columns: 1.25fr 1fr;
+      align-items: center;
+      gap: 40px;
+    }
+    .photo-box { width: 100%; max-width: 400px; margin: 0 0 0 auto; transform: translateY(30px); }
+    .stats {
+      grid-template-columns: repeat(3, 1fr);
+      align-items: start;
+    }
+    .stat:nth-child(2) { margin-top: 48px; }
+    .stat:nth-child(3) { margin-top: 96px; }
+    .steps { grid-template-columns: repeat(3, 1fr); align-items: start; }
+    .step:nth-child(2) { margin-top: 40px; }
+    .step:nth-child(3) { margin-top: 80px; }
+    .skill-groups { grid-template-columns: 1fr 1fr; }
+    .skill-groups .learning { grid-column: 1 / -1; }
+    .buttons { grid-template-columns: 1fr 1fr; max-width: 720px; }
+    .offset-r { margin-left: 8%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="topbar">
+      <span>THÀNH ĐẠT</span>
+      <a href="#lien-he">Liên hệ</a>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <span class="kicker"><span>Xin chào, mình là</span></span>
+        <h1>Thành <span class="l2">Đạt</span></h1>
+        <p class="tagline">Mình làm marketing cho nón bảo hiểm nhập từ Đài Loan</p>
+        <p class="subline">Bán hàng kiêm marketing tại <strong>một shop nón bảo hiểm biker</strong>, khoảng <strong>1 năm</strong> làm marketing.</p>
+      </div>
+      <div class="photo-box">
+        <img src="anh-dat.jpg" alt="Ảnh Thành Đạt" width="600" height="800">
+        <span class="photo-tag">Nón bảo hiểm biker</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. CON SỐ -->
+<section class="numbers">
+  <div class="wrap">
+    <span class="kicker"><span>Con số</span></span>
+    <h2 class="big">Vài con số <span class="blue">mình có</span></h2>
+    <div class="stats">
+      <div class="stat">
+        <span class="num">100.000</span>
+        <span class="unit">lượt xem</span>
+        <p>Video TikTok giới thiệu vòng tay thời trang. Mình lên kịch bản và quay dựng.</p>
+        <span class="where">TikTok · công ty cũ</span>
+      </div>
+      <div class="stat">
+        <span class="num">1.300</span>
+        <span class="unit">lượt xem</span>
+        <p>Video mình tự edit, đăng trên Instagram.</p>
+        <span class="where">Instagram · công ty hiện tại</span>
+      </div>
+      <div class="stat">
+        <span class="num">879</span>
+        <span class="unit">lượt xem</span>
+        <p>Một bài đăng trên Threads.</p>
+        <span class="where">Threads · công ty hiện tại</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. DỰ ÁN -->
+<section class="project">
+  <div class="wrap">
+    <span class="kicker"><span>Dự án</span></span>
+    <h2 class="big"><span class="outline">Shop nón</span><br>biker</h2>
+    <p class="lead">Shop bán nón bảo hiểm biker, nơi mình đang làm việc.</p>
+    <div class="steps">
+      <div class="step">
+        <span class="idx" aria-hidden="true">01</span>
+        <h3 class="label">Vấn đề</h3>
+        <p>Shop mới mở được 1 tháng, chưa ai biết đến.</p>
+      </div>
+      <div class="step">
+        <span class="idx" aria-hidden="true">02</span>
+        <h3 class="label">Mình làm gì</h3>
+        <p>Sếp chạy quảng cáo. Phần của mình:</p>
+        <ul>
+          <li>Quay, dựng video và đăng lên Instagram, Facebook</li>
+          <li>Trả lời tin nhắn khách hàng</li>
+          <li>Tư vấn và bán hàng cho khách đến cửa hàng</li>
+        </ul>
+      </div>
+      <div class="step">
+        <span class="idx" aria-hidden="true">03</span>
+        <h3 class="label">Kết quả</h3>
+        <div class="result-nums">
+          <span>1.300 lượt xem Instagram</span>
+          <span>879 lượt xem Threads</span>
+        </div>
+        <p>Shop dần được biết đến nhiều hơn và sắp khai trương.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. KỸ NĂNG -->
+<section class="skills">
+  <div class="wrap">
+    <span class="kicker" style="background:var(--white)"><span>Kỹ năng</span></span>
+    <h2 class="big">Mình <span class="outline">làm được</span></h2>
+    <div class="skill-groups offset-r">
+      <div>
+        <h3>Việc mình làm tốt</h3>
+        <ul class="chips">
+          <li><span>Tư vấn bán hàng trực tiếp</span></li>
+          <li><span>Chụp ảnh sản phẩm</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Công cụ</h3>
+        <ul class="chips">
+          <li><span>CapCut<small>dựng video trên điện thoại</small></span></li>
+          <li><span>Canva<small>thiết kế ảnh</small></span></li>
+          <li><span>Meta Business Suite<small>quản lý fanpage</small></span></li>
+        </ul>
+      </div>
+      <div class="learning">
+        <h3>Đang học</h3>
+        <ul class="chips light">
+          <li><span>Claude<small>để hỗ trợ edit</small></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. LIÊN HỆ -->
+<section class="contact" id="lien-he">
+  <div class="wrap">
+    <span class="kicker"><span>Liên hệ</span></span>
+    <h2 class="big">Nhắn <span class="blue">mình</span> nhé</h2>
+    <p class="lead">Bạn cứ nhắn qua Facebook nhé.</p>
+    <div class="buttons">
+      <a class="btn btn-fb" href="https://www.facebook.com/profile.php?id=61583384219750" target="_blank" rel="noopener">Nhắn Facebook <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+  <footer>Thành Đạt</footer>
+</section>
+
+</body>
+</html>

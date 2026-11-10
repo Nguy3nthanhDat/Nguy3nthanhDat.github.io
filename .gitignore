@@ -1,0 +1,6 @@
+# Chi dua len mang cac file cua trang web. Moi file khac (ho-so.md, ban-3, ...) bi bo qua.
+*
+!.gitignore
+!index.html
+!anh-dat.jpg
+ho-so.md
